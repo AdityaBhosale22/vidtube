@@ -1,0 +1,22 @@
+import mongoose from "mongoose";
+import { Apierrors } from "../utils/Apierrors.js";
+
+const errorHandler = (err, req, res, next) => {
+  let error = err;
+
+  if (!(error instanceof Apierrors)) {
+    const statusCode =
+      error.statusCode || error instanceof mongoose.Error ? 400 : 500;
+    const message = error.message || "Something Went Wrong";
+    error = new Apierrors(statusCode, message, error?.errors || [], err.stack);
+  }
+
+  const response = {
+    ...error,
+    message:error.message,
+    ...(process.env.NODE_ENV==="development"?{stack:error.stack}:{})
+  }
+  return res.status(error.statusCode).json(response)
+};
+
+export { errorHandler };
