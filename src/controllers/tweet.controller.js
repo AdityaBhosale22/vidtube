@@ -45,11 +45,54 @@ const getUserTweets = asyncHandler(async (req, res) => {
 })
 
 const updateTweet = asyncHandler(async (req, res) => {
-    //TODO: update tweet
+    const { tweetId } = req.params;
+    const { updatedContent } = req.body;
+    try {
+        if(!tweetId){
+            throw new Apierrors(400, "Tweet ID is required");
+        }
+        if(!updatedContent?.trim()){
+            throw new Apierrors(400, "Tweet content is required");
+        }
+        const tweet = await Tweet.findById(tweetId);
+        if(!tweet){
+            throw new Apierrors(404, "Tweet not found");
+        }
+        const updatedTweet=await Tweet.findByIdAndUpdate(
+            tweetId,
+            {
+                $set:{
+                    content: updateData
+                }
+            },
+            { new: true }
+        );
+        return res
+            .status(200)
+            .json(new Apiresponse(200, updatedTweet, "Tweet updated successfully"));
+    } catch (error) {
+        throw new Apierrors(500,error?.message || "Failed to update the tweet");
+    }
 })
 
 const deleteTweet = asyncHandler(async (req, res) => {
-    //TODO: delete tweet
+    const { tweetId } = req.params;
+    try {
+        if(!tweetId){
+            throw new Apierrors(400, "Tweet ID is required")
+        }
+        const tweet = await Tweet.findById(tweetId);
+        if(!tweet){
+            throw new Apierrors(404, "Tweet not found");
+        }
+        await Tweet.findByIdAndDelete(tweetId);
+        return res
+            .status(200)
+            .json(new Apiresponse(200, null, "Tweet deleted successfully"));
+
+    } catch (error) {
+        throw new Apierrors(500,error?.message || "Failed to delete the video");
+    }
 })
 
 export {
