@@ -31,8 +31,6 @@ Designed to support a full video-sharing platform like YouTube with users, video
 * [API Endpoints](#-api-endpoints)
 * [Screenshots](#-screenshots)
 * [Future Enhancements](#-future-enhancements)
-* [Contributing](#-contributing)
-* [License](#-license)
 
 ---
 
@@ -320,18 +318,5 @@ Some ideas to expand the project:
 * Admin dashboard
 * Rate limiting & security improvements
 * AI-based video recommendations
-
----
-
-# 🤝 **Contributing**
-
-Pull requests are welcome.
-For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-# 📄 **License**
-
-This project is licensed under the **MIT License**.
 
 ---
