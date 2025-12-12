@@ -1,7 +1,7 @@
-# 🎬 **Vidtube – Advanced JavaScript Backend**
+# 🎬 **FusionCast – Hybrid Video & Microblogging Backend**
 
 A production-ready backend built using **Node.js**, **Express.js**, **MongoDB**, **Cloudinary**, and **JWT Authentication**.
-Designed to support a full video-sharing platform like YouTube with users, videos, playlists, comments, likes, subscriptions, and dashboard analytics.
+Designed to power a modern social content platform combining YouTube-style video sharing and Twitter-style micro-tweets, complete with users, videos, playlists, comments, likes, subscriptions, and analytics.
 
 ---
 
@@ -14,7 +14,6 @@ Designed to support a full video-sharing platform like YouTube with users, video
 ![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen?logo=mongodb)
 ![Cloudinary](https://img.shields.io/badge/Media-Cloudinary-blue?logo=cloudinary)
 ![JWT](https://img.shields.io/badge/Auth-JWT-orange?logo=jsonwebtokens)
-![License](https://img.shields.io/badge/License-MIT-yellow)
 
 </div>
 
@@ -36,15 +35,8 @@ Designed to support a full video-sharing platform like YouTube with users, video
 
 # 🔍 **Overview**
 
-**Vidtube Backend** is a complete backend solution for a video-sharing platform.
+**FusionCast Backend** is a complete backend solution for a video plus tweet sharing platform.
 It includes user authentication, video management, playlist support, tweets, comments, likes, subscriptions, dashboards, and more.
-
-Perfect for:
-
-* Learning production backend structure
-* Full-stack projects
-* YouTube-like platform development
-* API design and authentication practice
 
 ---
 
@@ -142,8 +134,8 @@ test/
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/AdityaBhosale22/vidtube.git
-cd vidtube
+git clone https://github.com/AdityaBhosale22/fusioncast.git
+cd fusioncast
 ```
 
 ### 2️⃣ Install dependencies
